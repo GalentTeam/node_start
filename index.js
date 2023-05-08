@@ -4,7 +4,6 @@ import 'dotenv/config';
 
 import express from 'express';
 import morgan from 'morgan';
-import cors from 'cors';
 
 // dotenv
 dotenv.config({
@@ -24,7 +23,6 @@ app.set('trust proxy', 1);
 app.use(express.static('public'));
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
-app.use(cors());
 // Dev
 if (process.env.NODE_ENV === 'development')
 app.use(morgan('dev'));
